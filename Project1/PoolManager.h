@@ -103,11 +103,27 @@ class PoolManager
 		*/
 		void DestoryPool()
 		{
-			for (auto sprite : poolContainer)
+			if (poolContainer.size() > 0)
 			{
-				delete sprite;
+				for (auto sprite : poolContainer)
+				{
+					delete sprite;
+				}
+				poolContainer.clear();
 			}
-			poolContainer.clear();
+			
+			if (multispriteMap.size() > 0)
+			{
+				for (auto pool : multispriteMap)
+				{
+					for (auto sprite : pool)
+					{
+						delete sprite;
+					}
+				}
+				multispriteMap.clear();
+			}
+			
 		}
 		/*
 			Get Single sprite from the pool
