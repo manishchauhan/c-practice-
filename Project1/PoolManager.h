@@ -50,6 +50,7 @@ class PoolManager
 			for (int i = 0; i < total; i++)
 			{
 				sprites.push_back(poolContainer.front());
+				poolContainer.pop_front();
 			}
 			return sprites;
 		}
@@ -71,7 +72,9 @@ class PoolManager
 		{
 			if (poolContainer.size()>0)
 			{
-				return poolContainer.pop();
+				auto sprite=poolContainer.front();
+				poolContainer.pop_front();
+				return sprite;
 			}
 			return nullptr;
 		}

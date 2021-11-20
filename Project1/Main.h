@@ -34,9 +34,11 @@ int main()
 		random_pool.push_back(sp);
 	}
 	pool->addToPool(random_pool);
+	/*
 	for (auto sprite :pool->getSprites(84))
 	{
 		std::cout << sprite->getName() << std::endl;
-	}
+	}*/
+	std::cout << pool->getSprite()->getName() << std::endl;
 	return 0;
 }
