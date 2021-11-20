@@ -72,7 +72,6 @@ class PoolManager
 		{
 			if (poolContainer.size()>0)
 			{
-				unique_lock<std::mutex> lock(mt);
 				std::unique_lock<std::mutex> lock(mt);
 				auto sprite=poolContainer.front();
 				poolContainer.pop_front();
@@ -88,11 +87,12 @@ class PoolManager
 
 			if (Limit <= poolContainer.size())
 			{
-				unique_lock<std::mutex> lock(mt);
-				std::unique_lock<std::mutex> lock(mt);
+			
+			
 				std::cout << "adding not allowed to pool" << std::endl;
 				return;
 			}
+			std::unique_lock<std::mutex> lock(mt);
 			poolContainer.push_back(sprite);
 		}
 };
