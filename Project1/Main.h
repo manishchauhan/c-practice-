@@ -40,5 +40,8 @@ int main()
 		std::cout << sprite->getName() << std::endl;
 	}*/
 	std::cout << pool->getSprite()->getName() << std::endl;
+	pool->getSprite([=](SomeSprite* sp) {
+		std::cout << sp->getName() << std::endl;
+		});
 	return 0;
 }
