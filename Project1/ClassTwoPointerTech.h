@@ -64,5 +64,24 @@ public:
 		}
 		return isSumThere;
 	}
+	static std::vector<int> sortOneZero(std::vector<int> arr)
+	{
+		int left = 0;
+		int right = arr.size() - 1;
+		while (left<right)
+		{
+			if (arr[left] == 1)
+			{
+				
+				std::swap(arr[left], arr[right]);
+				right--;
+			}
+			else
+			{
+				left++;
+			}
+		}
+		return arr;
+	}
 };
 

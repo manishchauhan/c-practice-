@@ -56,6 +56,18 @@ int main()
 
 	bool status1 = ClassTwoPointerTech::checkMinus(values, 23);
 	std::cout << "minus case " << status1 << std::endl;
+
+
+
+
+	std::vector<int> arr = { 1,0,1,0,1,0,1 };
+
+
+	for (auto value : ClassTwoPointerTech::sortOneZero(arr))
+	{
+		std::cout << value << std::endl;
+	}
+
 	/*
 	std::vector<int> results = { 11,22,33,44,155 };
 	int result = b_search(results, 55);
